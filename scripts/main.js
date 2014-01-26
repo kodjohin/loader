@@ -17,20 +17,19 @@ var Loader = (new function (){
         //some velocity for the particles
         this.vx = -1 + Math.random() * 2;
         this.vy = -1 + Math.random() * 2;
-
-        this.draw = function(i){
-            var radius = Math.random()*this.SCALE //*window.loadProgress;
-            var opacity = Math.random()*1;
-            var offset = 22*i;
-            ctx.strokeStyle = '#fff';
-            ctx.globalAlpha = alpha;
-            ctx.beginPath();
-            ctx.arc((-22*2)+(WIDTH/2) +offset, HEIGHT/2, radius, 0, Math.PI*2);
-            ctx.lineWidth = .2;
-            ctx.fillStyle = 'rgba(255, 255, 255,' + opacity +')';
-            ctx.fill();
-            ctx.stroke();
-        }
+    }
+    Circle.prototype.draw = function(i){
+        var radius = Math.random()*this.SCALE //*window.loadProgress;
+        var opacity = Math.random()*1;
+        var offset = 22*i;
+        ctx.strokeStyle = '#fff';
+        ctx.globalAlpha = alpha;
+        ctx.beginPath();
+        ctx.arc((-22*2)+(WIDTH/2) +offset, HEIGHT/2, radius, 0, Math.PI*2);
+        ctx.lineWidth = .2;
+        ctx.fillStyle = 'rgba(255, 255, 255,' + opacity +')';
+        ctx.fill();
+        ctx.stroke();
     }
 
     this.init = function(){
